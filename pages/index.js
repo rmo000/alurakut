@@ -19,7 +19,7 @@ export default function Home(props) {
   useEffect(() => {
 
     //GET - followers
-    fetch('https://api.github.com/users/peas/followers')
+    fetch(`https://api.github.com/users/${githubUser}/followers`)
       .then(response => response.json())
       .then(data => setFollowers(data.map(({ id, login, avatar_url }) => {
         return {
@@ -176,27 +176,37 @@ export default function Home(props) {
 export async function getServerSideProps(context){
   const cookies = nookies.get(context)
   const token = cookies.USER_TOKEN
-  const { githubUser } = jwt.decode(token)
 
-  const { isAuthenticated } = await fetch('https://alurakut.vercel.app/api/auth',{
-    headers: {
-      'Authorization' : token,
-      'Content-Type': 'application/json'
+  try{
+    const { githubUser } = jwt.decode(token)
+    
+    const { isAuthenticated } = await fetch('https://alurakut.vercel.app/api/auth',{
+      headers: {
+        'Authorization' : token,
+        'Content-Type': 'application/json'
+      }
+    }).then(async response => response.json())
+    
+    if(!isAuthenticated){
+      return{
+        redirect: {
+          destination: '/login',
+          permanent: false
+        }
+      }
     }
-  }).then(async response => response.json())
-
-  if(!isAuthenticated){
+    
+    return{
+      props: {
+        githubUser
+      }
+    }
+  }catch{
     return{
       redirect: {
         destination: '/login',
         permanent: false
       }
-    }
-  }
-
-  return{
-    props: {
-      githubUser
     }
   }
 }
