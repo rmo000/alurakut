@@ -13,16 +13,17 @@
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [React](https://reactjs.org)
-- [Firebase](https://firebase.google.com/)
-- [TypeScript](https://www.typescriptlang.org/)
+- [Dato CMS](https://www.datocms.com/)
+- [NextJS](https://nextjs.org/)
+- [Styled-Components](https://styled-components.com/)
 
 ## 🚀 Como executar
 
 Clone o projeto e acesse a pasta do mesmo.
 
 ```bash
-$ git clone https://github.com/rmo000/letmeask.git
-$ cd letmeask
+$ git clone https://github.com/rmo000/alurakut.git
+$ cd alurakut
 ```
 
 Para iniciá-lo, siga os passos abaixo:
@@ -31,11 +32,11 @@ Para iniciá-lo, siga os passos abaixo:
 $ yarn
 
 # Iniciar o projeto
-$ yarn start
+$ yarn dev
 ```
 O app estará disponível no seu browser pelo endereço http://localhost:3000.
 
-Lembrando que será necessário criar uma conta no [Firebase](https://firebase.google.com/) e um projeto para disponibilizar um Realtime Database.
+Caso queria criar o seu próprio CMS basta criar uma conta no [Dato CMS](https://www.datocms.com/) e trocar os tokens de acesso no projeto.
 
 ## 💻 Projeto
 
