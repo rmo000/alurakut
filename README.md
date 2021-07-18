@@ -16,6 +16,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Dato CMS](https://www.datocms.com/)
 - [NextJS](https://nextjs.org/)
 - [Styled-Components](https://styled-components.com/)
+- [Nookies](https://www.npmjs.com/package/nookies)
+- [JsonWebToken](https://www.npmjs.com/package/jsonwebtoken)
 
 ## 🚀 Como executar
 
